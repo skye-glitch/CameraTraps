@@ -1,24 +1,24 @@
-# CameraTraps
-Inference:
-Install and activate environment according to 
-[CameraTraps github repo](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md#using-the-model)
-
- 
+# CameraTraps 
 ## Inference:
+Install and activate environment, then run megadetector, follow the instrutions on
+[CameraTraps github repo](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md#using-the-model). This is the instruction to run megadetector
 ```
 python detection/run_detector.py "path/to/md_v5a.0.0.pt" --image_file "path/to/img.jpg" --threshold 0.2 
 ```
  
-## Train:
+## Training:
 
 ### Data Preprocessing
-Split data: 1st answer in the [post](https://stackoverflow.com/questions/57394135/split-image-dataset-into-train-test-datasets)
+Split data into train and test set: 1st answer in the [post](https://stackoverflow.com/questions/57394135/split-image-dataset-into-train-test-datasets)
  
-[Coco to yolo](https://github.com/qwirky-yuzu/COCO-to-YOLO)
+Data format conversion with this code: [Coco to yolo](https://github.com/qwirky-yuzu/COCO-to-YOLO)
 
 ### Launch training
 Single GPU:
-```python train.py --data your_new_training_data.yaml --weights path/to/md_v5a.0.0.pt```
+[yolo tutorial](https://docs.ultralytics.com/tutorials/multi-gpu-training/) Chapter Single GPU:
+```
+python train.py --data your_new_training_data.yaml --weights path/to/md_v5a.0.0.pt
+```
  
 Multi-GPU single node:
 [yolo tutorial](https://docs.ultralytics.com/tutorials/multi-gpu-training/) Chapter Multi-GPU DistributedDataParallel Mode:
