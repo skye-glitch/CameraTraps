@@ -44,7 +44,7 @@ Scripts I used to do data preprocess and training launching are in this repo
  
  
 Training time:
-300 epochs completed in 17.4 hours.
+300 epochs completed in 17.4 hours. If only validate final epoch, training time is 15.5 hours for 300 epochs.
 2 nodes, 8 gpus, batch size 32, imgzsz 1280
 
 Training statistics can be found in results.csv
